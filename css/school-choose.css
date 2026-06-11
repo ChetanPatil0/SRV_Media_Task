@@ -1,0 +1,155 @@
+.school-choose {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.school-choose__container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.school-choose__title {
+      font-family:'noto sans', sans-serif;
+    margin: 0 0 50px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #24125f;
+}
+
+.school-choose__slider {
+    overflow: hidden;
+}
+
+.school-choose__track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.school-choose__track:focus-visible{
+    outline:3px solid #FFCC81;
+    outline-offset:4px;
+}
+
+.school-choose-card {
+    position: relative;
+    min-height: 380px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.school-choose-card__image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.school-choose-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(0,0,0,0) 30%,
+        rgba(0,0,0,.0) 100%
+    );
+}
+
+.school-choose-card__content {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2;
+}
+
+.school-choose-card__title {
+      font-family:'noto sans', sans-serif;
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.school-choose-card__description {
+    font-family:'noto sans', sans-serif;
+    margin: 0;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.school-choose__pagination {
+    display: none;
+}
+
+@media (max-width: 991px) {
+
+    .school-choose__track {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .school-choose {
+        padding: 60px 0;
+    }
+
+    .school-choose__title {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .school-choose__track {
+        display: flex;
+        overflow-x: auto;
+        gap: 16px;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .school-choose__track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .school-choose-card {
+        flex: 0 0 85%;
+        min-width: 85%;
+        scroll-snap-align: start;
+        min-height: 350px;
+    }
+
+    .school-choose__pagination {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 24px;
+    }
+
+    .school-choose__dot {
+        width: 10px;
+        height: 10px;
+        border: 0;
+        border-radius: 50%;
+        background: #d4d4d4;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .school-choose__dot.is-active {
+        background: #24125f;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .school-choose__track {
+        scroll-behavior: auto;
+    }
+}

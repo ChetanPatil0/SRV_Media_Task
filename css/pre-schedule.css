@@ -1,0 +1,382 @@
+
+
+.pre-schedule {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    background: linear-gradient(100deg, #EAD7FF 45.09%, #DEC1FF 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+
+.pre-schedule__bg-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    z-index: 1;
+}
+
+.pre-schedule__bg-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+}
+
+.pre-schedule__fade {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    z-index: 2;
+    background: linear-gradient(
+        to right,
+        #EAD7FF 0%,
+        rgba(234, 215, 255, 0) 20%
+    );
+    pointer-events: none;
+}
+
+
+.pre-schedule__content {
+    position: relative;
+    z-index: 3;
+    width: 48%;
+    padding: 80px 0 80px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.pre-schedule__subtitle {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 14px 0;
+    line-height: 1.4;
+
+    background: linear-gradient(270deg, #755797 0%, #9B4DF0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    display: inline-block;
+}
+
+
+.pre-schedule__title {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 1.08;
+    margin: 0 0 20px 0;
+    letter-spacing: -0.5px;
+
+    background: linear-gradient(360deg, #000E38 0%, #3F186A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+
+.pre-schedule__desc {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 44px 0;
+    line-height: 1.5;
+
+    background: linear-gradient(270deg, #755797 0%, #9B4DF0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+
+    display: inline-block;
+}
+
+
+.pre-schedule__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    text-decoration: none;
+
+    border: 2px solid #1B144C;
+    border-radius: 4px;
+    overflow: hidden;
+
+    background: transparent;
+    box-shadow: none;
+
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    position: relative;
+    isolation: isolate;
+}
+
+
+.pre-schedule__btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(
+        180deg,
+        #3F186A 0%,
+        #000E38 100%
+    );
+
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .45s ease;
+}
+
+.pre-schedule__btn:hover::before {
+    transform: scaleX(1);
+}
+
+.pre-schedule__btn-icon {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 58px;
+    height: 54px;
+
+    background: linear-gradient(
+        180deg,
+        #3F186A 0%,
+        #000E38 100%
+    );
+
+    border-right: 2px solid #1B144C;
+    flex-shrink: 0;
+
+    transition:
+        border-color .45s ease,
+        background .45s ease;
+}
+
+
+.pre-schedule__btn-icon svg,
+.pre-schedule__btn-icon i {
+    color: #fff;
+    transition: transform .45s ease;
+}
+
+.pre-schedule__btn:hover .pre-schedule__btn-icon svg,
+.pre-schedule__btn:hover .pre-schedule__btn-icon i {
+    transform: translateX(2px) rotate(45deg);
+}
+
+.pre-schedule__btn-text {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 18px;
+    height: 54px;
+
+    color: #1B144C;
+    white-space: nowrap;
+
+    transition: color .35s ease;
+}
+
+
+.pre-schedule__btn:hover .pre-schedule__btn-text {
+    color: #ffffff;
+}
+
+.pre-schedule__btn:hover .pre-schedule__btn-icon {
+    border-right-color: rgba(255,255,255,.25);
+}
+
+
+
+
+@media (max-width: 1400px) {
+    .pre-schedule__content {
+        padding: 70px 0 70px 64px;
+    }
+
+    .pre-schedule__title {
+        font-size: 52px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .pre-schedule__content {
+        padding: 64px 0 64px 48px;
+        width: 50%;
+    }
+
+    .pre-schedule__title {
+        font-size: 46px;
+    }
+
+    .pre-schedule__bg-img,
+    .pre-schedule__fade {
+        width: 58%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .pre-schedule {
+        min-height: 500px;
+    }
+
+    .pre-schedule__content {
+        padding: 56px 0 56px 40px;
+        width: 54%;
+    }
+
+     .pre-schedule__subtitle {
+    font-size: 18px;
+}
+
+.pre-schedule__title {
+    font-size: 40px;
+    line-height: 1.15;
+}
+
+.pre-schedule__desc {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+    .pre-schedule__bg-img,
+    .pre-schedule__fade {
+        width: 60%;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .pre-schedule__btn-icon {
+        width: 50px;
+        height: 48px;
+    }
+
+    .pre-schedule__btn-text {
+        height: 48px;
+        padding: 0 14px;
+        font-size: 11px;
+    }
+
+     .pre-schedule {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .pre-schedule__content {
+        width: 100%;
+        order: 1;   /* TOP */
+    }
+
+    .pre-schedule__bg-img {
+        width: 100%;
+        height: 300px;
+        order: 2;   /* BOTTOM */
+        position: relative;
+    }
+
+    .pre-schedule__subtitle {
+    font-size: 20px;
+}
+
+.pre-schedule__title {
+    font-size: 40px;
+    line-height: 1.15;
+}
+
+.pre-schedule__desc {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.pre-schedule__fade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    z-index: 2;
+
+    background: linear-gradient(
+        to bottom,
+        #EAD7FF 0%,
+        #EAD7FF 35%,
+        rgba(234, 215, 255, 0.95) 55%,
+        rgba(234, 215, 255, 0.75) 72%,
+        rgba(234, 215, 255, 0.35) 88%,
+        rgba(234, 215, 255, 0) 100%
+    );
+
+    pointer-events: none;
+}
+}
+
+@media (max-width: 480px) {
+
+    .pre-schedule__btn {
+        width: auto;
+    }
+
+    .pre-schedule__btn-icon {
+        width: 44px;
+        height: 42px;
+    }
+
+    .pre-schedule__btn-text {
+        height: 42px;
+        padding: 0 12px;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .pre-schedule__subtitle {
+    font-size: 18px;
+}
+
+.pre-schedule__title {
+    font-size: 34px;
+    line-height: 1.15;
+}
+
+.pre-schedule__desc {
+    font-size: 18px;
+    line-height: 1.5;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pre-schedule__btn,
+    .pre-schedule__btn::after {
+        transition: none;
+    }
+}

@@ -1,0 +1,280 @@
+
+
+.exhibition {
+    position: relative;
+    overflow: hidden;
+    padding: 50px 0 100px;
+    background: linear-gradient(360deg, #000E38 0%, #3F186A 100%);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.exhibition .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+
+.exhibition__title {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+       font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 56px;
+    /* Gradient text */
+    background: linear-gradient(360deg, #ffffff 0%, #e8d5ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+.exhibition-slider__viewport {
+    overflow: hidden;
+}
+
+.exhibition-slider__track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.exhibition-card {
+    flex: 0 0 calc(25% - 18px);
+    /* Gradient background */
+    background: linear-gradient(59.05deg, #DDBFFF 0.39%, #EDDDFF 93.5%);
+    border-radius: 20px;
+    min-height: 300px;
+    padding: 32px 28px;
+    /* Gradient border via outline trick */
+    position: relative;
+    box-sizing: border-box;
+    /* Border using pseudo-element for gradient border support */
+}
+
+
+.exhibition-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(315.27deg, #755797 2.63%, #070F3D 93.79%);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+
+.exhibition-card__icon {
+    margin-bottom: 28px;
+}
+
+.exhibition-card__icon img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+
+.exhibition-card__title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 14px;
+    /* Gradient text */
+    background: linear-gradient(360deg, #000E38 0%, #3F186A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+.exhibition-card__text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    /* Gradient text */
+    background: linear-gradient(360deg, #000E38 0%, #3F186A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* --- Controls --- */
+.exhibition-slider__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 48px;
+}
+
+
+.exhibition-slider__btn {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    background: transparent;
+    cursor: pointer;
+     color: #fff;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.7);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.exhibition-slider__btn:hover {
+    background: #fff;
+    color: #3F186A;
+    border-color: #fff;
+}
+
+.exhibition-slider__btn svg {
+    width: 20px;
+    height: 20px;
+
+    stroke: #ffffff;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    transition: stroke 0.3s ease;
+}
+
+
+
+.exhibition-slider__btn--next,
+.exhibition-slider__btn--prev {
+    background: transparent;
+}
+
+
+
+.exhibition-slider__btn:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+}
+
+.exhibition-slider__btn:hover svg {
+    stroke: #3F186A;
+}
+
+/* Keyboard Focus */
+
+.exhibition-slider__btn:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 4px;
+}
+
+/* Active Click */
+
+.exhibition-slider__btn:active {
+    background: #f4ebff;
+}
+
+/* --- Wave at bottom --- */
+.exhibition__wave {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 180px;
+    pointer-events: none;
+}
+
+.exhibition__wave svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+@media (max-width: 1280px) {
+    .exhibition__title {
+        font-size: 44px;
+    }
+    .exhibition-card {
+        flex: 0 0 calc(25% - 18px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .exhibition__title {
+        font-size: 38px;
+        margin-bottom: 44px;
+    }
+    .exhibition-card {
+        flex: 0 0 calc(50% - 12px);
+    }
+    .exhibition .container {
+        padding: 0 32px;
+    }
+}
+
+@media (max-width: 767px) {
+    .exhibition {
+        padding: 70px 0 140px;
+    }
+    .exhibition__title {
+        font-size: 28px;
+        margin-bottom: 36px;
+    }
+    .exhibition-card {
+        flex: 0 0 calc(100% - 0px);
+        min-height: auto;
+    }
+    .exhibition-card__title {
+        font-size: 18px;
+    }
+    .exhibition-card__text {
+        font-size: 15px;
+    }
+    .exhibition__wave {
+        height: 120px;
+    }
+    .exhibition .container {
+        padding: 0 20px;
+    }
+    .exhibition-slider__btn {
+        width: 46px;
+        height: 46px;
+    }
+}
+
+@media (max-width: 480px) {
+    .exhibition__title {
+        font-size: 24px;
+    }
+    .exhibition-card {
+        padding: 24px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .exhibition-slider__track {
+        transition: none;
+    }
+    .exhibition-slider__btn {
+        transition: none;
+    }
+}
+
+
+
